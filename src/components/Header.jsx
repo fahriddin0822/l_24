@@ -9,10 +9,8 @@ const Header = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        // Scrolling down, hide the header
         setIsVisible(false);
       } else {
-        // Scrolling up, show the header
         setIsVisible(true);
       }
       setLastScrollY(currentScrollY);
@@ -26,7 +24,7 @@ const Header = () => {
   }, [lastScrollY]);
 
   return (  
-    <div
+    <div 
       className={`bg-green-400 px-4 py-2 flex flex-row items-center justify-around sticky top-0 z-10 transition-transform duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
